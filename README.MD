@@ -9,3 +9,5 @@ The executable jar can be run by passing two parameters: <br />
 e.g.
 <i>java -jar out/artifacts/websearch_jar/websearch.jar urls.txt free</i>
 
+## Library use:
+This program makes use of the jsoup library in order to access webpages
