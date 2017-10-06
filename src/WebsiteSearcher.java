@@ -96,8 +96,10 @@ public class WebsiteSearcher {
             // Some of these can be handled by using the validateTLSCertificates(false) option
             //Document htmlDocument = connection.validateTLSCertificates(false).get();
             Document htmlDocument = connection.get();
-            String bodyText = htmlDocument.body().text().toLowerCase();
-            boolean containsText = bodyText.contains(key.toLowerCase());
+            String bodyText = htmlDocument.body().text();
+            //The search is case-sensitive by default
+            //To be case insensitive, bot bodyText and the key can be changed to lower or upper case
+            boolean containsText = bodyText.contains(key);
             return containsText ? "Yes" : "No";
 
         }
@@ -122,8 +124,8 @@ public class WebsiteSearcher {
 
     public static void main(String[] args){
 
-        WebsiteSearcher ws = new WebsiteSearcher("urls.txt");
-        ws.searchSites("free");
+        WebsiteSearcher ws = new WebsiteSearcher(args[0]);
+        ws.searchSites(args[1]);
         ws.writeResults("results.txt");
     }
 }
