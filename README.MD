@@ -1,4 +1,4 @@
-#Multi-threaded keyword search
+# Multi-threaded keyword search
 This program scans a given set of URLs and determines whether a specific keyword exists on each page
 
 ## Usage
